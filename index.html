@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>Drag & Drop</title>
+  </head>
+  <body>
+    <h1 class="main-title">Kanban board</h1>
+
+    <!-- main container -->
+    <div class="drag-container">
+      <!-- list of containers -->
+
+      <ul class="drag-list">
+        <!-- backlog container -->
+        <li class="drag-column backlog-column">
+          <span class="header"><h1>Backlog</h1></span>
+          <!-- backlog contents -->
+          <div class="custom-scroll" id="backlog-contents">
+            <ul
+              class="drag-item-list"
+              id="backlog-list"
+              ondragenter="dragEnter('backlogList')"
+              ondragover="dragOver('backlogList')"
+              ondragleave="dragLeave('backlogList')"
+              ondrop="drop('backlogList')"
+            >
+              <li class="drag-item">Test</li>
+              <li class="drag-item">Test</li>
+              <li class="drag-item">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Ducimus corrupti, ad sunt placeat consequuntur modi natus
+                consequatur fugiat saepe minus hic repellat esse recusandae
+                repudiandae, suscipit optio, et reiciendis excepturi?
+              </li>
+              <li class="drag-item">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Ducimus corrupti, ad sunt placeat consequuntur modi natus
+                consequatur fugiat saepe minus hic repellat esse recusandae
+                repudiandae, suscipit optio, et reiciendis excepturi?
+              </li>
+            </ul>
+          </div>
+          <!-- buttons -->
+          <div class="group">
+            <div class="btn-group">
+              <div class="add btn" onclick="addButton(0)">
+                <span class="plus-sign">+</span>
+                <span>Add</span>
+              </div>
+              <div class="save btn solid" onclick="saveButton(0)">
+                <span>Save</span>
+              </div>
+            </div>
+            <div class="add-container custom-scroll solid">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </div>
+        </li>
+
+        <!-- progress container -->
+        <li class="drag-column progress-column">
+          <span class="header"><h1>On Progress</h1></span>
+          <!-- progress contents -->
+          <div class="custom-scroll" id="progress-contents">
+            <ul
+              class="drag-item-list"
+              id="progress-list"
+              ondragenter="dragEnter('progressList')"
+              ondragover="dragOver('progressList')"
+              ondragleave="dragLeave('progressList')"
+              ondrop="drop('progressList')"
+            >
+              <li class="drag-item">Test</li>
+              <li class="drag-item">Test</li>
+              <li class="drag-item">Test</li>
+            </ul>
+          </div>
+
+          <!-- buttons -->
+          <div class="group">
+            <div class="btn-group">
+              <div class="add btn" onclick="addButton(1)">
+                <span class="plus-sign">+</span>
+                <span>Add</span>
+              </div>
+              <div class="save btn solid" onclick="saveButton(1)">
+                <span>Save</span>
+              </div>
+            </div>
+            <div class="add-container custom-scroll solid">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </div>
+        </li>
+
+        <!-- complete container -->
+        <li class="drag-column complete-column">
+          <span class="header"><h1>Complete</h1></span>
+          <!-- complete contents -->
+          <div class="custom-scroll" id="complete-contents">
+            <ul
+              class="drag-item-list"
+              id="complete-list"
+              ondragenter="dragEnter('completeList')"
+              ondragover="dragOver('completeList')"
+              ondragleave="dragLeave('completeList')"
+              ondrop="drop('completeList')"
+            >
+              <li class="drag-item">Test</li>
+              <li class="drag-item">Test</li>
+              <li class="drag-item">Test</li>
+            </ul>
+          </div>
+          <!-- buttons -->
+          <div class="group">
+            <div class="btn-group">
+              <div class="add btn" onclick="addButton(2)">
+                <span class="plus-sign">+</span>
+                <span>Add</span>
+              </div>
+              <div class="save btn solid" onclick="saveButton(2)">
+                <span>Save</span>
+              </div>
+            </div>
+            <div class="add-container custom-scroll solid">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </div>
+        </li>
+
+        <!-- on-hold container -->
+        <li class="drag-column on-hold-column">
+          <span class="header"><h1>On Hold</h1></span>
+          <!-- on-hold contents -->
+          <div class="custom-scroll" id="on-hold-contents">
+            <ul
+              class="drag-item-list"
+              id="on-hold-list"
+              ondragenter="dragEnter('onHoldList')"
+              ondragover="dragOver('onHoldList')"
+              ondragleave="dragLeave('onHoldList')"
+              ondrop="drop('onHoldList')"
+            >
+              <!-- list items -->
+            </ul>
+          </div>
+          <!-- buttons -->
+          <div class="group">
+            <div class="btn-group">
+              <div class="add btn" onclick="addButton(3)">
+                <span class="plus-sign">+</span>
+                <span>Add</span>
+              </div>
+              <div class="save btn solid" onclick="saveButton(3)">
+                <span>Save</span>
+              </div>
+            </div>
+            <div class="add-container custom-scroll solid">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
